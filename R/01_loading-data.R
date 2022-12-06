@@ -102,6 +102,9 @@ obj_subset@assays$RNA@counts %>%
 drive_upload("raw_counts_subset.tsv", path = sd)
 file.remove("raw_counts_subset.tsv")
 
+obj@meta.data %>%
+  group
+
 obj_subset@meta.data |>
   write.table("metadata_subset.tsv", sep = "\t")
 
