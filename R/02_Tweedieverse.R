@@ -4,6 +4,7 @@ library(Tweedieverse)
 library(ggplot2)
 library(dplyr)
 library(cplm)
+library(omicsArt)
 
 #Loading Metadata
 metadata <- read.table(
@@ -41,18 +42,44 @@ t_expression <- as.data.frame(t(expression))
 names(t_expression) <- gsub("-", "", names(t_expression), fixed=TRUE)
 
 
-#Make Disease Ontology a Factor Variable
+#Make Metadata Variables Factors
 cleaned_metadata$disease__ontology_label <- as.factor(cleaned_metadata$disease__ontology_label)
 names(cleaned_metadata)
 
-#Running Tweedieverse
+cleaned_metadata$age <- as.factor(cleaned_metadata$age)
+names(cleaned_metadata)
+
+cleaned_metadata$sex <- as.factor(cleaned_metadata$sex)
+
+#Running Tweedieverse Conditioning on Disease Ontology Label
 Tweedieverse(t_expression,
              cleaned_metadata,
-             'Tweedieverse_Output_ZICP',
+             'Tweedieverse_Output_CPLM_AllQ',
              fixed_effects = 'disease__ontology_label',
-             base_model = 'ZICP',
+             max_significance = 1.0,
+             base_model = 'CPLM',
              reference='disease__ontology_label,normal')
 
-(t_expression$SARSCoV23prime)
-(t_expression$VMO1)
+#Running Tweedieverse Conditioning on Age
+Tweedieverse(t_expression,
+             cleaned_metadata,
+             'Tweedieverse_Output_Sex_CPLM',
+             fixed_effects = 'age',
+             base_model = 'CPLM')
+
+#Running Tweedieverse Conditioning on Sex
+Tweedieverse(t_expression,
+             cleaned_metadata,
+             'Tweedieverse_Output_Sex_CPLM',
+             fixed_effects = 'sex',
+             base_model = 'CPLM')
+
+
+#Running Tweedieverse Conditioning on Bloody Swab
+Tweedieverse(t_expression,
+             cleaned_metadata,
+             'output/tweedieverse/swab',
+             fixed_effects = 'Bloody_Swab',
+             base_model = 'CPLM')
+
 
