@@ -1,5 +1,0 @@
-filename	file_type	species_scientific_name	genome_assembly_name	genome_assembly_accession	genome_annotation_name	is_raw_counts	library_preparation_protocol	units	biosample_input_type	modality
-20210220_NasalSwab_RawCounts.txt	Expression Matrix	Homo sapiens	GRCh38	GCA_000001405.15	Ensembl 94	true	Seq-Well S^3	UMI-corrected raw counts	Whole cell	Transcriptomic: unbiased
-20210220_NasalSwab_NormCounts.txt	Expression Matrix	Homo sapiens	GRCh38	GCA_000001405.15	Ensembl 94		Seq-Well S^3		Whole cell	Transcriptomic: unbiased
-20210220_NasalSwab_UMAP.txt	Cluster									
-20210701_NasalSwab_MetaData.txt	Metadata									

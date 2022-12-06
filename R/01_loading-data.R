@@ -1,11 +1,16 @@
 library(Seurat)
 library(SeuratDisk)
+library(googledrive)
 
-data <- read.table("data/expression/rawcounts.txt.gz", sep = "\t", header = T)
+drive_ls("pubh6885-tp-data")
+
+data <- drive_read_string("~/pubh6885-tp-data/rawcounts.txt") %>%
+  read.table(text = ., sep = "\t", header = T)
 
 obj <- CreateSeuratObject(data)
 
-metadata <- read.csv("data/metadata/metadata.csv", row.names = 2)
+metadata <- drive_read_string("~/pubh6885-tp-data/metadata.csv") %>%
+  read.csv(text = ., row.names = 2)
 metadata$X <- NULL
 
 obj <- obj |>
