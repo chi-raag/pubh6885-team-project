@@ -54,32 +54,34 @@ cleaned_metadata$sex <- as.factor(cleaned_metadata$sex)
 #Running Tweedieverse Conditioning on Disease Ontology Label
 Tweedieverse(t_expression,
              cleaned_metadata,
-             'Tweedieverse_Output_CPLM_AllQ',
+             'output/tweedieverse/disease_reference',
              fixed_effects = 'disease__ontology_label',
-             max_significance = 1.0,
              base_model = 'CPLM',
-             reference='disease__ontology_label,normal')
+             reference='normal')
 
 #Running Tweedieverse Conditioning on Age
 Tweedieverse(t_expression,
              cleaned_metadata,
-             'Tweedieverse_Output_Sex_CPLM',
+             'output/tweedieverse/age_reference',
              fixed_effects = 'age',
-             base_model = 'CPLM')
+             base_model = 'CPLM',
+             reference='19-29')
 
 #Running Tweedieverse Conditioning on Sex
 Tweedieverse(t_expression,
              cleaned_metadata,
-             'Tweedieverse_Output_Sex_CPLM',
+             'output/tweedieverse/sex_reference',
              fixed_effects = 'sex',
-             base_model = 'CPLM')
+             base_model = 'CPLM',
+             reference='male')
 
 
 #Running Tweedieverse Conditioning on Bloody Swab
 Tweedieverse(t_expression,
              cleaned_metadata,
-             'output/tweedieverse/swab',
+             'output/tweedieverse/swab_reference',
              fixed_effects = 'Bloody_Swab',
-             base_model = 'CPLM')
+             base_model = 'CPLM',
+             reference='No')
 
 
