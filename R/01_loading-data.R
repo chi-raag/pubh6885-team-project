@@ -1,6 +1,7 @@
 library(Seurat)
 library(SeuratDisk)
 library(googledrive)
+library(dplyr)
 
 # List files in the shared directory
 sd <- shared_drive_find() %>%
