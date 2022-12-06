@@ -20,6 +20,7 @@ metadata <- metadata[-c(1,2,3,7, 9,10,11,18,19,21,23,24,25,26,28,29,30,31)]
 
 #Keep only distinct rows of metadata and further cleaning
 cleaned_metadata <- distinct(metadata, donor_id, .keep_all = T)
+cleaned_metadata <- cleaned_metadata[-1]
 View(cleaned_metadata)
 
 #Loading Expression Data
@@ -35,18 +36,22 @@ expression <- read.delim(
 
 t_expression <- as.data.frame(t(expression))
 
+#Removing dashes from names in t_expression
+names(t_expression) <- gsub("-", "", names(t_expression), fixed=TRUE)
+
+
+#Make Disease Ontology a Factor Variable
+cleaned_metadata$disease__ontology_label <- as.factor(cleaned_metadata$disease__ontology_label)
 names(cleaned_metadata)
 
 #Running Tweedieverse
 Tweedieverse(t_expression,
              cleaned_metadata,
-             'Tweedieverse_Output',
-             abd_threshold = 0,
-             prev_threshold = 0,
-             max_significance = 0.1,
-             base_model = 'CPLM',
-             reference = 'disease__ontology_label,normal')
+             'Tweedieverse_Output_ZICP',
+             fixed_effects = 'disease__ontology_label',
+             base_model = 'ZICP',
+             reference='disease__ontology_label,normal')
 
-#Running Maaslin2
-
+(t_expression$SARSCoV23prime)
+(t_expression$VMO1)
 
