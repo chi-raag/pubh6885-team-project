@@ -15,7 +15,7 @@ drive_ls(sd)
 drive_download(as_id("10FXWE5woGZhk8qKIXVwgw4tTjjM24FIC"))
 data <- read.table("rawcounts.txt.gz", sep = "\t", header = T)
 file.remove("rawcounts.txt.gz")
-obj <- CreateSeuratObject(data)
+obj       <- CreateSeuratObject(data)
 
 # Read metadata from shared drive, read into a data frame, remove the first
 # column due to it being an index variable, and add the metadata to the Seurat
@@ -52,6 +52,8 @@ obj |>
 drive_upload("02_post-qc.h5seurat", sd)
 file.remove("02_post-qc.h5seurat")
 
+obj <- LoadH5Seurat("~/Google Drive/Shared drives/Pubh6885-team-project/02_post-qc.h5seurat")
+
 obj <- obj |>
   SCTransform(vst.flavor = "v2")
 
@@ -59,9 +61,7 @@ obj <- obj |>
   RunPCA(assay = "SCT")
 
 obj |>
-  SaveH5Seurat("03_post-norm-pca")
-drive_upload("03_post-norm-pca.h5seurat", sd)
-file.remove("03_post-norm-pca.h5seurat")
+  SaveH5Seurat("~/Google Drive/Shared drives/Pubh6885-team-project/03_post-norm-pca")
 
 donor_agg_raw <- obj |> AggregateExpression(assay = "SCT",
                                             features = VariableFeatures(obj),
