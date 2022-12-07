@@ -1,7 +1,5 @@
 library(ggplot2)
 library(dplyr)
-<<<<<<< HEAD
-<<<<<<< HEAD
 library(forcats)
 library(readr)
 library(patchwork)
@@ -220,16 +218,3 @@ ggsave(
   units = "px",
   dpi = "retina"
 )
-=======
-=======
->>>>>>> df24c069321f93f9dbcbc5f26ed547387598aec1
-library(readr)
-
-results <- read.table("output/tweedieverse/all_results.tsv",
-                      sep = "\t", header = T)
-
-results$value |> unique()
-<<<<<<< HEAD
->>>>>>> 63d00c8f70e96a72509de1b63fe0dfea19993253
-=======
->>>>>>> df24c069321f93f9dbcbc5f26ed547387598aec1
