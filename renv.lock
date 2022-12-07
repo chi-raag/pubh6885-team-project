@@ -1664,6 +1664,19 @@
       "Hash": "df58958f293b166e4ab885ebcad90e02",
       "Requirements": []
     },
+    "omicsArt": {
+      "Package": "omicsArt",
+      "Version": "1.0.0.0",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteUsername": "omicsEye",
+      "RemoteRepo": "omicsArt",
+      "RemoteRef": "master",
+      "RemoteSha": "cc07b1a89d208c1b1150d7deca36a1b9bb4775b5",
+      "Hash": "e7f2de7e29c3e45e56ee07f8e27b727f",
+      "Requirements": []
+    },
     "openssl": {
       "Package": "openssl",
       "Version": "2.0.5",
