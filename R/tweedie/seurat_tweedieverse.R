@@ -12,8 +12,7 @@ obj_sub <- obj |>
 counts <- obj_sub@assays$RNA@counts |>
   as.matrix()
 
-groups <- obj$disease__ontology_label |>
-  as.factor()
+groups <- obj_sub$disease__ontology_label
 
 metadata <- data.frame("groups" = groups)
 
@@ -27,6 +26,6 @@ Tweedieverse(
   fixed_effects = c("groups"),
   base_model = 'CPLM',
   adjust_offset = TRUE,
-  reference = "normal",
+  reference = "groups,normal",
   cores = 2
 )

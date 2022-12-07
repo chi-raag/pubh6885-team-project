@@ -4,3 +4,5 @@ library(readr)
 
 results <- read.table("output/tweedieverse/all_results.tsv",
                       sep = "\t", header = T)
+
+results$value |> unique()
