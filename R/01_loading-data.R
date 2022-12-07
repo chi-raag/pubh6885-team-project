@@ -102,6 +102,12 @@ dist_matrix_raw %>%
 dist_matrix_norm %>%
   as.matrix() %>%
   write.table("output/dist/dist_matrix_norm.tsv", sep = "\t")
+dist_matrix_raw %>%
+  as.matrix() %>%
+  write.table("dist_matrix_raw.tsv", sep = "\t")
+dist_matrix_norm %>%
+  as.matrix() %>%
+  write.table("dist_matrix_norm.tsv", sep = "\t")
 
 obj_subset <- obj %>%
   subset(features = VariableFeatures(obj))

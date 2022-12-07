@@ -126,10 +126,17 @@
     },
     "Matrix": {
       "Package": "Matrix",
+<<<<<<< HEAD
       "Version": "1.5-3",
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "4006dffe49958d2dd591c17e61e60591",
+=======
+      "Version": "1.5-1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "539dc0c0c05636812f1080f473d2c177",
+>>>>>>> 63d00c8f70e96a72509de1b63fe0dfea19993253
       "Requirements": [
         "lattice"
       ]
@@ -302,14 +309,23 @@
       "Package": "SeuratDisk",
       "Version": "0.0.0.9020",
       "Source": "GitHub",
+<<<<<<< HEAD
       "Remotes": "satijalab/seurat-data",
       "RemoteType": "github",
+=======
+      "RemoteType": "github",
+      "Remotes": "satijalab/seurat-data",
+>>>>>>> 63d00c8f70e96a72509de1b63fe0dfea19993253
       "RemoteHost": "api.github.com",
       "RemoteRepo": "seurat-disk",
       "RemoteUsername": "mojaveazure",
       "RemoteRef": "HEAD",
       "RemoteSha": "9b89970eac2a3bd770e744f63c7763419486b14c",
+<<<<<<< HEAD
       "Hash": "18d5d212bad69ae88d2e531c4edb496a",
+=======
+      "Hash": "05f68b08f51c742d0fbaeedc1a136881",
+>>>>>>> 63d00c8f70e96a72509de1b63fe0dfea19993253
       "Requirements": [
         "Matrix",
         "R6",
@@ -365,11 +381,19 @@
       "Source": "GitHub",
       "RemoteType": "github",
       "RemoteHost": "api.github.com",
+<<<<<<< HEAD
       "RemoteRepo": "Tweedieverse",
       "RemoteUsername": "himelmallick",
       "RemoteRef": "HEAD",
       "RemoteSha": "c558a4a1b1fd3d150b48a9b82b8d2273687cdebf",
       "Hash": "bd68b1791f95f31d528e872be20a4fbb",
+=======
+      "RemoteUsername": "himelmallick",
+      "RemoteRepo": "Tweedieverse",
+      "RemoteRef": "master",
+      "RemoteSha": "c558a4a1b1fd3d150b48a9b82b8d2273687cdebf",
+      "Hash": "ca65887827c17c2c4cd2dd6f9b7c3f0d",
+>>>>>>> 63d00c8f70e96a72509de1b63fe0dfea19993253
       "Requirements": [
         "bbmle",
         "cplm",
@@ -1359,10 +1383,17 @@
     },
     "jsonlite": {
       "Package": "jsonlite",
+<<<<<<< HEAD
       "Version": "1.8.4",
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "a4269a09a9b865579b2635c77e572374",
+=======
+      "Version": "1.8.3",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "8b1bd0be62956f2a6b91ce84fac79a45",
+>>>>>>> 63d00c8f70e96a72509de1b63fe0dfea19993253
       "Requirements": []
     },
     "knitr": {
@@ -1701,10 +1732,17 @@
     },
     "openssl": {
       "Package": "openssl",
+<<<<<<< HEAD
       "Version": "2.0.5",
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "b04c27110bf367b4daa93f34f3d58e75",
+=======
+      "Version": "2.0.4",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "e86c5ffeb8474a9e03d75f5d2919683e",
+>>>>>>> 63d00c8f70e96a72509de1b63fe0dfea19993253
       "Requirements": [
         "askpass"
       ]
@@ -2372,6 +2410,7 @@
     },
     "stringr": {
       "Package": "stringr",
+<<<<<<< HEAD
       "Version": "1.5.0",
       "Source": "Repository",
       "Repository": "CRAN",
@@ -2384,6 +2423,16 @@
         "rlang",
         "stringi",
         "vctrs"
+=======
+      "Version": "1.4.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "a66ad12140cd34d4f9dfcc19e84fc2a5",
+      "Requirements": [
+        "glue",
+        "magrittr",
+        "stringi"
+>>>>>>> 63d00c8f70e96a72509de1b63fe0dfea19993253
       ]
     },
     "survival": {

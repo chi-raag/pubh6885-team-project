@@ -50,6 +50,13 @@ cleaned_metadata$age <- as.factor(cleaned_metadata$age)
 names(cleaned_metadata)
 
 cleaned_metadata$sex <- as.factor(cleaned_metadata$sex)
+View(cleaned_metadata)
+
+#Write cleaned_metadata as a file for omeClustviz to use:
+write.table(cleaned_metadata,
+            'output/tweedieverse/cleaned_metadata.tsv',
+            sep = '\t',
+            col.names = NA)
 
 #Running Tweedieverse Conditioning on Disease Ontology Label
 Tweedieverse(t_expression,

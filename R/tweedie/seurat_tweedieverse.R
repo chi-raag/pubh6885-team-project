@@ -3,8 +3,11 @@ library(Seurat)
 library(SeuratDisk)
 library(omicsArt)
 
+<<<<<<< HEAD
 obj1 <- LoadH5Seurat("~/Google Drive/Shared drives/Pubh6885-team-project/01_initial-object.h5seurat")
 
+=======
+>>>>>>> 63d00c8f70e96a72509de1b63fe0dfea19993253
 obj <-
   LoadH5Seurat("~/Google Drive/Shared drives/Pubh6885-team-project/03_post-norm-pca.h5seurat")
 
