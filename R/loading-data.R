@@ -1,5 +1,7 @@
 library(Seurat)
+library(ggplot2)
 library(SeuratDisk)
+library(sctransform)
 library(googledrive)
 library(dplyr)
 
@@ -30,11 +32,18 @@ obj |> SaveH5Seurat("01_initial-object")
 drive_upload("01_initial-object.h5seurat", sd)
 file.remove("01_initial-object.h5seurat")
 
+obj$orig.ident <- " "
+Idents(obj) <- "orig.ident"
+
 obj |>
-  VlnPlot(features = c("nFeature_RNA", "nCount_RNA", "Percent_Mitochondrial"), ncol = 3)
+  VlnPlot(features = c("nFeature_RNA", "nCount_RNA", "Percent_Mitochondrial"),
+          ncol = 3,
+          )
+
 plot1 <- FeatureScatter(obj, feature1 = "nCount_RNA", feature2 = "Percent_Mitochondrial")
 plot2 <- FeatureScatter(obj, feature1 = "nCount_RNA", feature2 = "nFeature_RNA")
 plot1 + plot2
+
 
 obj <- obj |>
   subset(nFeature_RNA > 200 &
@@ -56,6 +65,10 @@ obj <- LoadH5Seurat("~/Google Drive/Shared drives/Pubh6885-team-project/02_post-
 
 obj <- obj |>
   SCTransform(vst.flavor = "v2")
+
+sct <- vst(obj@assays$RNA@counts, vst.flavor = "v2")
+
+plot_model_pars(sct)
 
 obj <- obj |>
   RunPCA(assay = "SCT")
